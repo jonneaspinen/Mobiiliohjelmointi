@@ -3,6 +3,6 @@ import NumberGuess from "./NumberGuess";
 
 export default function App() {
   return (
-    <NumberGuess></NumberGuess>
+    <Calculator></Calculator>
   );
 }
