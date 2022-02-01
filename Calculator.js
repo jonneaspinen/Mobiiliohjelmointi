@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, Button, TextInput, View, FlatList } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-export default function Calculator() {
+export default function Calculator({ navigation }) {
 
   const [result, setResult] = useState('');
   const [num1, setNum1] = useState('');
@@ -34,7 +34,7 @@ export default function Calculator() {
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text style={styles.title}>Result: {result}</Text>
       <TextInput
         style={styles.input}
         onChangeText={text => setNum1(text)}
@@ -59,13 +59,9 @@ export default function Calculator() {
           />
         </View>
       </View>
-      <Text style={styles.title}>History</Text>
-      <FlatList
-        data={data}
-        renderItem={({ item }) =>
-          <Text>{item.key}</Text>
-        }
-        keyExtractor={(item, index) => index}
+      <Button
+        title="History"
+        onPress={() => navigation.navigate('History', { data: data })}
       />
       <StatusBar hidden={true} />
     </View>
@@ -74,7 +70,7 @@ export default function Calculator() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 100,
+    paddingTop: 50,
     flex: 1,
     backgroundColor: '#e6bbbb',
     alignItems: 'center',
@@ -98,5 +94,7 @@ const styles = StyleSheet.create({
   },
   title: {
     textDecorationLine: 'underline',
+    marginTop: 20,
+    fontWeight: 'bold'
   }
 });
