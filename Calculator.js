@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     margin: 10
   },
   title: {
-    textDecorationLine: 'underline',
     marginTop: 20,
     fontWeight: 'bold'
   }
