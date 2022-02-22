@@ -1,17 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, Button, TextInput, View, Alert, Image, StatusBar } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
+import * as Location from 'expo-location';
 
 export default function FindAddress() {
 
+    const [location, setLocation] = useState(null);
     const [address, setAddress] = useState('');
-    const [latitude, setLatitude] = useState(60.166628); // Helsinki as default
-    const [longitude, setLongitude] = useState(24.943508);
+    const [latitude, setLatitude] = useState(0);
+    const [longitude, setLongitude] = useState(0);
 
-    const key = 'INSERT KEY HERE'
+    const key = 'INSERT MAPQUEST KEY HERE'
 
     const url = `http://www.mapquestapi.com/geocoding/v1/address?key=${key}&location=${address}`
+
+    useEffect(() => {
+        (async () => {
+            let { status } = await Location.requestForegroundPermissionsAsync();
+            if (status !== 'granted') {
+                Alert.alert('No permission to get location')
+                return;
+            }
+            let location = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High});
+            setLocation(location);
+            console.log('Location: ', location)
+            setLatitude(location.coords.latitude)
+            setLongitude(location.coords.longitude)
+        })();
+    }, []);
 
     getLocation = async () => {
         try {
@@ -49,7 +65,7 @@ export default function FindAddress() {
             >
                 <Marker
                     coordinate={markCord}
-                    title='Haaga-Helia'
+                    title={address}
                 />
             </MapView>
             < TextInput
