@@ -5,6 +5,7 @@ import ShoppingList from "./ShoppingList";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import GetRecipes from "./GetRecipes";
+import FindAddress from "./FindAddress";
 
 export default function App() {
 
@@ -12,7 +13,7 @@ export default function App() {
 
   return (
 
-    <GetRecipes></GetRecipes>
+    <FindAddress></FindAddress>
  /**
     <NavigationContainer>
       <Stack.Navigator>
