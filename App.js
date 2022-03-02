@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import GetRecipes from "./GetRecipes";
 import FindAddress from "./FindAddress";
 import ShoppingListSQL from "./ShoppingListSQL";
+import FirebaseDemo from "./FirebaseDemo";
 
 export default function App() {
 
@@ -14,7 +15,7 @@ export default function App() {
 
   return (
 
-    <ShoppingListSQL></ShoppingListSQL>
+    <FirebaseDemo></FirebaseDemo>
  /**
     <NavigationContainer>
       <Stack.Navigator>
