@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import GetRecipes from "./GetRecipes";
 import FindAddress from "./FindAddress";
+import ShoppingListSQL from "./ShoppingListSQL";
 
 export default function App() {
 
@@ -13,7 +14,7 @@ export default function App() {
 
   return (
 
-    <FindAddress></FindAddress>
+    <ShoppingListSQL></ShoppingListSQL>
  /**
     <NavigationContainer>
       <Stack.Navigator>
