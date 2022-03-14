@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, Button, TextInput, View, FlatList } from 'react-native';
+import { StyleSheet, Text, Button, TextInput, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 export default function Calculator({ navigation }) {

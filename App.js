@@ -8,6 +8,8 @@ import GetRecipes from "./GetRecipes";
 import FindAddress from "./FindAddress";
 import ShoppingListSQL from "./ShoppingListSQL";
 import FirebaseDemo from "./FirebaseDemo";
+import ContactSMS from "./ContactSMS";
+import Contacts from "./Contacts";
 
 export default function App() {
 
@@ -15,7 +17,7 @@ export default function App() {
 
   return (
 
-    <FirebaseDemo></FirebaseDemo>
+    <Contacts></Contacts>
  /**
     <NavigationContainer>
       <Stack.Navigator>
