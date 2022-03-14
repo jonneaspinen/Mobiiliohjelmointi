@@ -10,6 +10,7 @@ import ShoppingListSQL from "./ShoppingListSQL";
 import FirebaseDemo from "./FirebaseDemo";
 import ContactSMS from "./ContactSMS";
 import Contacts from "./Contacts";
+import TextToSpeech from "./TextToSpeech";
 
 export default function App() {
 
@@ -17,7 +18,7 @@ export default function App() {
 
   return (
 
-    <Contacts></Contacts>
+    <TextToSpeech></TextToSpeech>
  /**
     <NavigationContainer>
       <Stack.Navigator>
